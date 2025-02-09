@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Check } from 'lucide-react';
-import Image from 'next/image';
+import { Check } from "lucide-react";
+import Image from "next/image";
 
 interface ServiceCardProps {
   title: string;
@@ -12,10 +12,21 @@ interface ServiceCardProps {
   index?: number;
 }
 
-export default function ServiceCard({ title, description, options, image, isImageRight, index }: ServiceCardProps) {
+export default function ServiceCard({
+  title,
+  description,
+  options,
+  image,
+  isImageRight,
+  index,
+}: ServiceCardProps) {
   return (
     <div key={index} className="w-full max-w-6xl mx-auto px-4 py-12">
-      <div className={`flex flex-col ${isImageRight ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
+      <div
+        className={`flex flex-col ${
+          isImageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+        } gap-12 items-center`}
+      >
         <div className="flex-1 space-y-6">
           <div className="inline-block">
             <span className="bg-blue-50 text-blue-600 px-4 py-1 rounded-full text-sm font-medium">
@@ -27,16 +38,11 @@ export default function ServiceCard({ title, description, options, image, isImag
             {title}
           </h2>
 
-          <p className="text-lg text-gray-600 leading-relaxed">
-            {description}
-          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">{description}</p>
 
           <div className="space-y-4 pt-4">
             {options.map((option, index) => (
-              <div 
-                key={index}
-                className="flex items-start space-x-3 group"
-              >
+              <div key={index} className="flex items-start space-x-3 group">
                 <div className="flex-shrink-0 mt-1">
                   <div className="p-1 rounded-full bg-green-100 group-hover:bg-green-200 transition-colors duration-200">
                     <Check className="w-5 h-5 text-green-600" />
@@ -59,11 +65,12 @@ export default function ServiceCard({ title, description, options, image, isImag
         <div className="flex-1">
           <div className="relative aspect-square w-full max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl transform rotate-6 scale-95 opacity-40" />
-            <div className="relative overflow-hidden rounded-2xl shadow-xl">
-              <img
+            <div className="relative aspect-square w-full max-w-md mx-auto">
+              <Image
                 src={image}
                 alt={title}
-                loading='lazy'
+                fill
+                loading="lazy"
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />
             </div>
