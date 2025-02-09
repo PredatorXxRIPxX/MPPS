@@ -65,7 +65,7 @@ export default function ServiceCard({
         <div className="flex-1">
           <div className="relative aspect-square w-full max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl transform rotate-6 scale-95 opacity-40" />
-            <div className="relative aspect-square w-full max-w-md mx-auto">
+            <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
               <Image
                 src={image}
                 alt={title}
