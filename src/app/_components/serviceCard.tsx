@@ -1,6 +1,7 @@
 'use client';
 
 import { Check } from 'lucide-react';
+import Image from 'next/image';
 
 interface ServiceCardProps {
   title: string;
@@ -59,9 +60,10 @@ export default function ServiceCard({ title, description, options, image, isImag
           <div className="relative aspect-square w-full max-w-md mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl transform rotate-6 scale-95 opacity-40" />
             <div className="relative overflow-hidden rounded-2xl shadow-xl">
-              <img
+              <Image
                 src={image}
                 alt={title}
+                fill={true}
                 loading='lazy'
                 className="object-cover hover:scale-105 transition-transform duration-500"
               />

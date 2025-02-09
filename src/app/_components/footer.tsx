@@ -70,8 +70,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-gray-400 max-w-md">
-              Propulsés par l'innovation, nous construisons vos projets avec
-              passion et ambition. Notre équipe junior s'engage à délivrer des
+              Propulsés par l&apos;innovation, nous construisons vos projets avec
+              passion et ambition. Notre équipe junior s&apos;engage à délivrer des
               solutions numériques de qualité.
             </p>
           </div>

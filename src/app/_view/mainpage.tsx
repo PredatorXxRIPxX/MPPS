@@ -19,7 +19,7 @@ export default function MainPage() {
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-            Propulsés par l'innovation, nous construirons vos projets avec{' '}
+            Propulsés par l&apos;innovation, nous construirons vos projets avec{' '}
             <span className="text-blue-600">passion</span> et{' '}
             <span className="text-purple-600">ambition</span>.
           </h1>

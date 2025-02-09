@@ -90,8 +90,8 @@ export default function ContactUs() {
         message: '',
         isAccepted: false
       });
-    } catch (error) {
-      setSubmitStatus('error');
+    } catch {
+      setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
     }
@@ -183,7 +183,7 @@ export default function ContactUs() {
                 <div className="flex-1">
                   <h3 className="text-sm font-medium text-gray-900">Conditions Générales</h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    Je confirme que les informations soumises sont exactes et j'accepte qu'elles soient traitées conformément à la politique de confidentialité.
+                    Je confirme que les informations soumises sont exactes et j&apos;accepte qu&apos;elles soient traitées conformément à la politique de confidentialité.
                   </p>
                 </div>
                 <Switch
@@ -208,7 +208,6 @@ export default function ContactUs() {
                 </>
               )}
             </button>
-
             {submitStatus === 'success' && (
               <div className="flex items-center justify-center space-x-2 text-green-600">
                 <Check className="w-5 h-5" />
