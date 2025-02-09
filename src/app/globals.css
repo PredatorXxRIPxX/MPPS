@@ -2,10 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #55123D;
+  --secondary: #522553;
+  --third: #543672;
+  --fourth: #4F51A3;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
