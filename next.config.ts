@@ -1,7 +1,8 @@
- 
-const nextConfig = {
+const isProd = process.env.NODE_ENV === 'production';
+const repoName = 'MPPS'; // Change this to your GitHub repo name
+
+module.exports = {
   output: 'export',
-  exclude: ['README.md'],
-}
- 
-module.exports = nextConfig
+  basePath: isProd ? `/${repoName}` : '',
+  assetPrefix: isProd ? `/${repoName}/` : '',
+};
