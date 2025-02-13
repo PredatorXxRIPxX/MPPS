@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send, Check, AlertCircle } from "lucide-react";
 import { Switch } from "@radix-ui/themes";
+import axios from "axios";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -78,18 +79,11 @@ export default function ContactUs() {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
-    setSubmitStatus('idle');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        isAccepted: false
-      });
+      const response = await axios.post<{message:string}>('/api/contactus', formData);
+      console.log(response.data);
+      setSubmitStatus("success");
     } catch {
       setSubmitStatus("error");
     } finally {
@@ -196,6 +190,7 @@ export default function ContactUs() {
 
             <button
               type="submit"
+              onSubmit={handleSubmit}
               disabled={isSubmitting}
               className="w-full flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-white font-medium hover:bg-fourth transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
