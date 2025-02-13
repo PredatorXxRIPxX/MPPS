@@ -6,9 +6,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "deploy": "npm run build && gh-pages -d out",
     "start": "next start",
-    "export": "next build && rm -rf out/README.md",
+    "deploy": "npm run build && git subtree push --prefix out origin gh-pages",
     "lint": "next lint"
   },
   "dependencies": {
