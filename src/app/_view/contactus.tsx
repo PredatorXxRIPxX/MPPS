@@ -81,8 +81,7 @@ export default function ContactUs() {
     setIsSubmitting(true);
 
     try {
-      const response = await axios.post<{message:string}>('/api/contactus', formData);
-      console.log(response.data);
+      await axios.post<{message:string}>('/api/contactus', formData);
       setSubmitStatus("success");
     } catch {
       setSubmitStatus("error");
