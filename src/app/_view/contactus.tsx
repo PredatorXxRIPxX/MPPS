@@ -81,15 +81,36 @@ export default function ContactUs() {
     setSubmitStatus('idle');
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        isAccepted: false
+
+      const response = await fetch("/sendContactForm",{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify({
+          name:formData.name,
+          email:formData.email,
+          subject:formData.subject,
+          message:formData.message
+        })
       });
+      if(!response.ok){
+        throw new Error("Network error");
+      }
+
+      const data = await response.json();
+      if(data.success){
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          isAccepted: false
+        });
+      }else{
+        throw new Error(data.message)
+      }
     } catch {
       setSubmitStatus("error");
     } finally {
